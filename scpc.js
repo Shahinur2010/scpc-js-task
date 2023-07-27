@@ -117,33 +117,31 @@ const result = findTwoNumbersWithSum(inputArray, targetValue);
 
 // Task 5: Implement a simple JavaScript calculator. The calculator should take two numbers and an operator (+, -, *, /) as input and return the result of the operation.
 
-// program for a simple calculator
-
-// take the operator input
-const operator =  ('Enter operator ( either +, -, * or / ): ');
-
-// take the operand input
-const number1 = parseFloat(('Enter first number: '));
-const number2 = parseFloat(('Enter second number: '));
-
-let res;
-
-// using if...else if... else
-if (operator == '+') {
-    res = number1 + number2;
-}
-else if (operator == '-') {
-    res = number1 - number2;
-}
-else if (operator == '*') {
-    res = number1 * number2;
-}
-else {
-    res = number1 / number2;
+function calculate(num1, operator, num2) {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    case '/':
+      if (num2 === 0) {
+        throw new Error("Division by zero is not allowed.");
+      }
+      return num1 / num2;
+    default:
+      throw new Error("Invalid operator. Please use '+', '-', '*', or '/'.");
+  }
 }
 
-// display the res
-// console.log(`${3.5} ${*} ${5.6} = ${res}`);
+// Example usage:
+const num1 = 10;
+const num2 = 5;
+const operator = '+';
+const output = calculate(num1, operator, num2);
+console.log("output:", output); // Output: 15
+
 
 
 /* ............................................................................ */
@@ -204,9 +202,9 @@ function romanToInteger(roman) {
 }
 
 // Example usage:
-console.log(romanToInteger("IX")); // Output: 9
-console.log(romanToInteger("XXI")); // Output: 21
-console.log(romanToInteger("MCMXCIV")); // Output: 1994
+// console.log(romanToInteger("IX")); // Output: 9
+// console.log(romanToInteger("XXI")); // Output: 21
+// console.log(romanToInteger("MCMXCIV")); // Output: 1994
 
 /* ............................................................................ */
 
@@ -227,4 +225,4 @@ function findSecondSmallest(numbers) {
 // Example usage:
 const numbersArray = [7, 2, 11, 5, 9, 3];
 const secondSmallest = findSecondSmallest(numbersArray);
-console.log("Second Smallest Element:", secondSmallest); // Output: 3
+// console.log("Second Smallest Element:", secondSmallest); // Output: 3
