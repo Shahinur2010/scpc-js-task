@@ -2,8 +2,6 @@
 
 // Task 1 : Create a function that takes a string as input and returns the reversed version of the string without using the built-in reverse() method.
 
-// Example Input: "hello world" Example Output: "dlrow olleh"
-
 const reverseIt = (str) => {
   let newString = "";
   for (let i = str.length - 1; i >= 0; i--) {
@@ -12,13 +10,11 @@ const reverseIt = (str) => {
   return newString;
 };
 
-// console.log(reverseIt("hello world"));
+console.log(reverseIt("hello world"));
 
 /* ............................................................................ */
 
 // Task 2 : Create a function that takes an array of numbers as input and returns the sum of all positive numbers in the array.
-
-// Example Input: [2, -5, 10, -3, 7] Example Output: 19
 
 let arr = [2, -5, 10, -3, 7];
 
@@ -29,13 +25,11 @@ const total = arr.reduce((sum, current) => {
   return sum;
 }, 0);
 
-// console.log(total);
+console.log(total);
 
 /* ............................................................................ */
 
 // Task 3: Write a JavaScript program to find the most frequent element in an array and return it.
-
-// Example Input: [3, 5, 2, 5, 3, 3, 1, 4, 5] Example Output: 3
 
 const arr1=[3, 5, 2, 5, 3, 3, 1, 4, 5];
 let mf = 1;
@@ -55,13 +49,11 @@ for (let i=0; i<arr1.length; i++)
         }
         m=0;
 }
-// console.log("Most frequent element in the array",  item) ;
+console.log("Most frequent element in the array",  item) ;
 
 /* ............................................................................ */
 
 // Task 4: Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
-
-//  Example Input: ([1, 3, 6, 8, 11, 15], 9) Example Output: [1, 2] (numbers at indices 1 and 2: 3 + 6 = 9)
 
 function findTwoNumbersWithSum(nums, target) {
   let left = 1;
@@ -85,7 +77,7 @@ function findTwoNumbersWithSum(nums, target) {
 const inputArray = [1, 3, 6, 8, 11, 15];
 const targetValue = 9;
 const result = findTwoNumbersWithSum(inputArray, targetValue);
-// console.log(result); 
+console.log(result); 
 
 /* ............................................................................ */
 
@@ -109,16 +101,16 @@ function calculate(num1, operator, num2) {
   }
 }
 
-// Example usage:
 const num1 = 10;
 const num2 = 5;
 const operator = '+';
 const output = calculate(num1, operator, num2);
-console.log("output:", output); // Output: 15
+console.log("output:", output); 
 
 
 
 /* ............................................................................ */
+
 // Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
 
 function generateRandomPassword(length) {
@@ -138,10 +130,9 @@ function generateRandomPassword(length) {
   return password;
 }
 
-// Example usage: Generate a random password of length 12
 const passwordLength = 12;
 const randomPassword = generateRandomPassword(passwordLength);
-// console.log(randomPassword);
+console.log(randomPassword);
 
 /* ............................................................................ */
 
@@ -166,7 +157,7 @@ function romanToInteger(roman) {
 
     if (nextNumeral > currentNumeral) {
       result += nextNumeral - currentNumeral;
-      i++; // Skip the next numeral as it has been accounted for in the subtraction
+      i++; 
     } else {
       result += currentNumeral;
     }
@@ -175,10 +166,9 @@ function romanToInteger(roman) {
   return result;
 }
 
-// Example usage:
-// console.log(romanToInteger("IX")); // Output: 9
-// console.log(romanToInteger("XXI")); // Output: 21
-// console.log(romanToInteger("MCMXCIV")); // Output: 1994
+console.log(romanToInteger("IX")); 
+console.log(romanToInteger("XXI")); 
+console.log(romanToInteger("MCMXCIV")); 
 
 /* ............................................................................ */
 
@@ -189,14 +179,11 @@ function findSecondSmallest(numbers) {
     throw new Error("The array must contain at least two elements.");
   }
 
-  // Sort the array in ascending order
   const sortedArray = numbers.slice().sort((a, b) => a - b);
 
-  // The second smallest element will be at index 1
   return sortedArray[1];
 }
 
-// Example usage:
 const numbersArray = [7, 2, 11, 5, 9, 3];
 const secondSmallest = findSecondSmallest(numbersArray);
-// console.log("Second Smallest Element:", secondSmallest); // Output: 3
+console.log("Second Smallest Element:", secondSmallest); 
