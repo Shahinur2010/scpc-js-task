@@ -207,3 +207,24 @@ function romanToInteger(roman) {
 console.log(romanToInteger("IX")); // Output: 9
 console.log(romanToInteger("XXI")); // Output: 21
 console.log(romanToInteger("MCMXCIV")); // Output: 1994
+
+/* ............................................................................ */
+
+// Task 8: Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number.
+
+function findSecondSmallest(numbers) {
+  if (numbers.length < 2) {
+    throw new Error("The array must contain at least two elements.");
+  }
+
+  // Sort the array in ascending order
+  const sortedArray = numbers.slice().sort((a, b) => a - b);
+
+  // The second smallest element will be at index 1
+  return sortedArray[1];
+}
+
+// Example usage:
+const numbersArray = [7, 2, 11, 5, 9, 3];
+const secondSmallest = findSecondSmallest(numbersArray);
+console.log("Second Smallest Element:", secondSmallest); // Output: 3
