@@ -38,7 +38,7 @@ const reverseIt = (str) => {
   return newString;
 };
 
-console.log(reverseIt("hello world"));
+// console.log(reverseIt("hello world"));
 
 /* ............................................................................ */
 
@@ -55,7 +55,7 @@ const total = arr.reduce((sum, current) => {
   return sum;
 }, 0);
 
-console.log(total);
+// console.log(total);
 
 /* ............................................................................ */
 
@@ -81,6 +81,34 @@ for (let i=0; i<arr1.length; i++)
         }
         m=0;
 }
-console.log("Most frequent element in the array",  item) ;
+// console.log("Most frequent element in the array",  item) ;
 
+/* ............................................................................ */
 
+// Task 4: Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
+
+//  Example Input: ([1, 3, 6, 8, 11, 15], 9) Example Output: [1, 2] (numbers at indices 1 and 2: 3 + 6 = 9)
+
+function findTwoNumbersWithSum(nums, target) {
+  let left = 1;
+  let right = nums.length - 1;
+
+  while (left < right) {
+    const currentSum = nums[left] + nums[right];
+
+    if (currentSum === target) {
+      return [left, right];
+    } else if (currentSum < target) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+
+  return [];
+}
+
+const inputArray = [1, 3, 6, 8, 11, 15];
+const targetValue = 9;
+const result = findTwoNumbersWithSum(inputArray, targetValue);
+console.log(result); 
