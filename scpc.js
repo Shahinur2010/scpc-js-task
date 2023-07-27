@@ -111,7 +111,7 @@ function findTwoNumbersWithSum(nums, target) {
 const inputArray = [1, 3, 6, 8, 11, 15];
 const targetValue = 9;
 const result = findTwoNumbersWithSum(inputArray, targetValue);
-console.log(result); 
+// console.log(result); 
 
 /* ............................................................................ */
 
@@ -169,4 +169,41 @@ function generateRandomPassword(length) {
 // Example usage: Generate a random password of length 12
 const passwordLength = 12;
 const randomPassword = generateRandomPassword(passwordLength);
-console.log(randomPassword);
+// console.log(randomPassword);
+
+/* ............................................................................ */
+
+// Task 7: Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
+
+function romanToInteger(roman) {
+  const romanNumerals = {
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000,
+  };
+
+  let result = 0;
+
+  for (let i = 0; i < roman.length; i++) {
+    const currentNumeral = romanNumerals[roman[i]];
+    const nextNumeral = romanNumerals[roman[i + 1]];
+
+    if (nextNumeral > currentNumeral) {
+      result += nextNumeral - currentNumeral;
+      i++; // Skip the next numeral as it has been accounted for in the subtraction
+    } else {
+      result += currentNumeral;
+    }
+  }
+
+  return result;
+}
+
+// Example usage:
+console.log(romanToInteger("IX")); // Output: 9
+console.log(romanToInteger("XXI")); // Output: 21
+console.log(romanToInteger("MCMXCIV")); // Output: 1994
